@@ -1,4 +1,4 @@
-#include "IIIQBall-US.dtsi"
+#include "IIIQBall-Foot.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
