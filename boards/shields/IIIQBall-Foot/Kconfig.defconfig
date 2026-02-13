@@ -1,29 +1,35 @@
-if SHIELD_IIIQBALL-US_R
+# 全パーツ共通の設定（ドングル、左、右のいずれかであれば適用）
+if SHIELD_IIIQBALL-FOOT_F || SHIELD_IIIQBALL-FOOT_L || SHIELD_IIIQBALL-FOOT_R
 
 config ZMK_KEYBOARD_NAME
-    default "IIIQBall-US"
+    default "IIIQBall-Foot"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_IIIQBALL-US_R || SHIELD_IIIQBALL-US_L
-
+# 分離型機能をすべてのパーツで有効化
 config ZMK_SPLIT
     default y
 
+# --- ドングル(FOOT_F)専用の設定 ---
+if SHIELD_IIIQBALL-FOOT_F
+    # ドングルを親機として設定
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+
+    # 左右2つ(LとR)をドングルに繋ぐ設定
+    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+        default 2
+
+    # 接続枠の拡張: 子機(2) + PC用プロファイル(5) = 7
+    config BT_MAX_CONN
+        default 7
+    config BT_MAX_PAIRED
+        default 7
 endif
 
-if SHIELD_IIIQBALL-US_R
-
-# Other settings
-
-config ZMK_POINTING
-    default y
-
-# Assuming pointing device uses SPI
-config SPI
-    default y
+# --- 右手(FOOT_R: トラックボール側)専用の設定 ---
+if SHIELD_IIIQBALL-FOOT_R
+    # マウス操作（トラックボール）機能を有効化
+    config ZMK_POINTING
+        default y
+endif
 
 endif
