@@ -5,18 +5,16 @@
 };
 
 &kscan0 {
-    // 割り込みピンの指定
-    interrupt-gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-    // 物理配線に基づいたピン順序
+    interrupt-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     gpios = 
-        <&xiao_d 10 GPIO_ACTIVE_HIGH>,  // Index 0
-        <&xiao_d 9  GPIO_ACTIVE_HIGH>,  // Index 1
-        <&xiao_d 8  GPIO_ACTIVE_HIGH>,  // Index 2
-        <&xiao_d 7  GPIO_ACTIVE_HIGH>,  // Index 3
-        <&xiao_d 6  GPIO_ACTIVE_HIGH>,  // Index 4
-        <&xiao_d 3  GPIO_ACTIVE_HIGH>,  // Index 5
-        <&xiao_d 2  GPIO_ACTIVE_HIGH>,  // Index 6
-        <&xiao_d 0  GPIO_ACTIVE_HIGH>;  // Index 7
+        <&xiao_d 10 GPIO_ACTIVE_HIGH>,
+        <&xiao_d 9  GPIO_ACTIVE_HIGH>,
+        <&xiao_d 8  GPIO_ACTIVE_HIGH>,
+        <&xiao_d 7  GPIO_ACTIVE_HIGH>,
+        <&xiao_d 6  GPIO_ACTIVE_HIGH>,
+        <&xiao_d 0  GPIO_ACTIVE_HIGH>,
+        <&xiao_d 2  GPIO_ACTIVE_HIGH>,
+        <&xiao_d 3  GPIO_ACTIVE_HIGH>;
 };
 
 &left1_encoder { status = "disabled"; };
