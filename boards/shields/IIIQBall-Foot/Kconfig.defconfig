@@ -9,7 +9,7 @@ config ZMK_SPLIT
     default y
 
 # --- ドングル(FOOT_F)専用の設定 ---
-if SHIELD_IIIQBALL-FOOT_F
+if SHIELD_IIIQBALL-FOOT_R
     # ドングルを親機として設定
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
