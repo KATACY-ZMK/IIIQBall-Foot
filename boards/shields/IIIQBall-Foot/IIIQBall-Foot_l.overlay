@@ -1,7 +1,8 @@
 #include "IIIQBall-Foot.dtsi"
+&xiao_serial { status = "disabled"; };
 
 &default_transform {
-    row-offset = <0>;
+    row-offset = <3>;
 };
 
 &kscan0 {
