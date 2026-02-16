@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: KATATHY-ZMK
       url-base: https://github.com/KATACY-ZMK
-    - name: prospector
-      url-base: https://github.com/t-ogura
     - name: badjeff
       url-base: https://github.com/badjeff
 
@@ -15,10 +13,6 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: prospector-zmk-module
-      remote: prospector
-      revision: v2.1.0  # Use v2.0.0 for ZMK ≤0.3 (Zephyr 3.x)
-      path: modules/prospector-zmk-module
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
