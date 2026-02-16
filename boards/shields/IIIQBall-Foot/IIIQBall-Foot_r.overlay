@@ -3,14 +3,14 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&xiao_serial { status = "disabled"; };
+&xiao_serial { status = "disabled"; }; // [cite: 64]
 
 &default_transform {
-    row-offset = <11>;
+    row-offset = <11>; // [cite: 64]
 };
 
 &kscan0 {
-    interrupt-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    interrupt-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // [cite: 65]
     gpios = 
         <&xiao_d 10 GPIO_ACTIVE_HIGH>,
         <&xiao_d 9  GPIO_ACTIVE_HIGH>,
@@ -19,15 +19,16 @@
         <&xiao_d 6  GPIO_ACTIVE_HIGH>,
         <&xiao_d 0  GPIO_ACTIVE_HIGH>,
         <&xiao_d 2  GPIO_ACTIVE_HIGH>,
-        <&xiao_d 3  GPIO_ACTIVE_HIGH>;
+        <&xiao_d 3  GPIO_ACTIVE_HIGH>; // [cite: 66]
 };
 
-&right1_encoder { status = "okay"; };
-&right2_encoder { status = "okay"; };
+&right1_encoder { status = "okay"; }; // [cite: 67]
+&right2_encoder { status = "okay"; }; // [cite: 67]
 
+/* ハードウェアの有効化 */
+&spi0 { status = "okay"; };
+&trackball { status = "okay"; };
 
-
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
-};
+/* 役割：子機（送信側）として動作 */
+&trackball_split { status = "okay"; };
+&trackball_listener { status = "disabled"; };
