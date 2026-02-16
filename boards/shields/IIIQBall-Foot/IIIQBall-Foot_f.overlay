@@ -1,6 +1,17 @@
 #include "IIIQBall-Foot.dtsi"
 #include "IIIQBall-Foot_trackball.dtsi"
 
+&xiao_serial {
+    status = "disabled";
+};
+
+/ {
+    chosen {
+        zmk,kscan = &default_kscan;
+        zmk,physical-layout = &mtk64_physical_layout;
+    };
+};
+
 &kscan0 {
     interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     gpios = 

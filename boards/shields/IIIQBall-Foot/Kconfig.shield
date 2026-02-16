@@ -2,13 +2,9 @@ config SHIELD_IIIQBALL-FOOT_F
 
 def_bool $(shields_list_contains,IIIQBall-Foot_f)
 
-
-
 config SHIELD_IIIQBALL-FOOT_R
 
 def_bool $(shields_list_contains,IIIQBall-Foot_r)
-
-
 
 config SHIELD_IIIQBALL-FOOT_L
 

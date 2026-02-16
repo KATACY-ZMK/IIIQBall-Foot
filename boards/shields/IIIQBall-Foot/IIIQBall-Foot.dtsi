@@ -8,15 +8,15 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &physical_layout0;
+        zmk,kscan = &default_kscan;
+        zmk,physical-layout = &IIIQBall-Foot_physical_layout;
     };
 
-    physical_layout0: physical_layout0 {
+    IIIQBall-Foot_physical_layout: IIIQBall-Foot_physical_layout {
         compatible = "zmk,physical-layout";
-        display-name = "Default Layout";
+        display-name = "Default";
         transform = <&default_transform>;
-        kscan = <&kscan0>;
+
         keys  //                    w   h    x    y      rot     rx     ry
             
             = <&key_physical_attrs 100 100  400    0       0      0      0>
@@ -150,7 +150,7 @@
             ;
     };
 
-    default_transform: keymap_transform0 {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <7>;
         rows = <19>;
@@ -164,7 +164,7 @@
         >;
     };
 
-    kscan0: kscan0 {
+    default_kscan: kscan_0 {
         compatible = "zmk,kscan-gpio-charlieplex";
         wakeup-source;
     };

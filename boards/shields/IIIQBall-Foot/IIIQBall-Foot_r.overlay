@@ -1,7 +1,12 @@
 #include "IIIQBall-Foot.dtsi"
 #include "IIIQBall-Foot_trackball.dtsi"
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &default_kscan;
+        zmk,physical-layout = &mtk64_physical_layout;
+    };
+};
 
 &default_transform {
     row-offset = <11>;
