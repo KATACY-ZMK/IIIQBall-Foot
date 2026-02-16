@@ -42,20 +42,20 @@
 };
 
 / {
-    /* 子機用の転送設定：親ノードでアドレス管理が必要 */
+    /* 子機用の転送設定：親はただのコンテナ */
     split_inputs {
-        compatible = "zmk,input-split";
         #address-cells = <1>;
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
-            reg = <0>;
+            compatible = "zmk,input-split"; // 名前札はここ
+            reg = <0>;                       // 番号もここ
             status = "disabled";
             device = <&trackball>;
         };
     };
 
-    /* 親機用の受信設定 */
+    /* 親機用の受信設定：これには reg は不要 */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";

@@ -25,10 +25,10 @@
 &right1_encoder { status = "okay"; };
 &right2_encoder { status = "okay"; };
 
-/* ハードウェア有効化 */
+/* デバイスを叩き起こす */
 &spi0 { status = "okay"; };
 &trackball { status = "okay"; };
 
-/* 子機（送信側）として設定 */
+/* 役割：子機（送信側）を有効化 */
 &trackball_split { status = "okay"; };
 &trackball_listener { status = "disabled"; };
