@@ -37,7 +37,7 @@ endif
 
 
 # --- 右手側（子機 / Peripheral）の設定 ---
-if SHIELD_IIIQBall_FOOT_L
+if SHIELD_IIIQBall_FOOT_R
 
 config ZMK_KEYBOARD_NAME
     default "IIIQBall_FOOT_R"
