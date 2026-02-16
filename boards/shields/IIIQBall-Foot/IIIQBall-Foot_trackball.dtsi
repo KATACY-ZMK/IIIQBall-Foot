@@ -20,45 +20,59 @@
 };
 
 &spi0 {
-    compatible = "nordic,nrf-spim";
     status = "disabled";
+    compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
-        compatible = "pixart,pmw3610";
         status = "disabled";
+        compatible = "pixart,pmw3610-alt";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        motion-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        
+        evt-type = <INPUT_EV_REL>;
+
+        x-input-code = <INPUT_REL_Y>; 
+        y-input-code = <INPUT_REL_X>;
+
         res-cpi = <600>;
-        zephyr,axis-x = <INPUT_REL_Y>;
-        zephyr,axis-y = <INPUT_REL_X>;
-        invert-y;
         force-awake;
+
     };
 };
 
 / {
-    /* 子機用の転送設定：親はただのコンテナ */
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
-            compatible = "zmk,input-split"; // 名前札はここ
-            reg = <0>;                       // 番号もここ
-            status = "disabled";
             device = <&trackball>;
+            compatible = "zmk,input-split";
+            reg = <0>;
         };
     };
 
-    /* 親機用の受信設定：これには reg は不要 */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball>;
+
+        snipe {
+        layers = <2>;
+        input-processors = <&zip_xy_scaler 1 2>;
+        process-next;
+        };
+
+        scroll {
+        layers = <1>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 64>;
+        process-next;
+        };
+
     };
 };

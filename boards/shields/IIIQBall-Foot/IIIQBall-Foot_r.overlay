@@ -3,8 +3,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&xiao_serial { status = "disabled"; };
-
 &default_transform {
     row-offset = <11>;
 };
@@ -25,10 +23,16 @@
 &right1_encoder { status = "okay"; };
 &right2_encoder { status = "okay"; };
 
-/* デバイスを叩き起こす */
-&spi0 { status = "okay"; };
-&trackball { status = "okay"; };
+&spi0 {
+    status = "okay";
+};
 
-/* 役割：子機（送信側）を有効化 */
-&trackball_split { status = "okay"; };
-&trackball_listener { status = "disabled"; };
+&trackball { 
+    status = "okay";
+};
+
+&trackball_split { 
+    status = "okay";
+};
+
+&xiao_serial { status = "disabled"; };

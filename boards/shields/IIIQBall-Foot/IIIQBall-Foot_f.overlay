@@ -9,3 +9,7 @@
         <&xiao_d 8  GPIO_ACTIVE_HIGH>,
         <&xiao_d 7  GPIO_ACTIVE_HIGH>;
 };
+
+&trackball_listener {
+    status = "okay";  
+};
