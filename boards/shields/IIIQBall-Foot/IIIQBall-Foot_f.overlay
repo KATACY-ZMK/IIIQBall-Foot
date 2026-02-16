@@ -1,5 +1,5 @@
 #include "IIIQBall-Foot.dtsi"
-
+#include "IIIQBall-Foot_trackball.dtsi"
 
 &kscan0 {
     interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
