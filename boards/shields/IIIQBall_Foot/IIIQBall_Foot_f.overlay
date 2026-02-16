@@ -12,7 +12,7 @@
     };
 };
 
-&kscan_0 {
+&default_kscan {
     interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     gpios = 
         <&xiao_d 10 GPIO_ACTIVE_HIGH>,
