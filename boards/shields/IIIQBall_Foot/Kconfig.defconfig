@@ -1,8 +1,8 @@
 # --- Foot（親機 / Central / Dongle代わり）の設定 ---
-if SHIELD_IIIQBALL-FOOT_F
+if SHIELD_IIIQBall_FOOT_F
 
 config ZMK_KEYBOARD_NAME
-    default "IIIQBALL-FOOT_F"
+    default "IIIQBall_FOOT_F"
 
 config ZMK_SPLIT
     default y
@@ -25,10 +25,10 @@ endif
 
 
 # --- 左手側（子機 / Peripheral）の設定 ---
-if SHIELD_IIIQBALL-FOOT_L
+if SHIELD_IIIQBall_FOOT_L
 
 config ZMK_KEYBOARD_NAME
-    default "IIIQBALL-FOOT_L"
+    default "IIIQBall_FOOT_L"
 
 config ZMK_SPLIT
     default y
@@ -37,10 +37,10 @@ endif
 
 
 # --- 右手側（子機 / Peripheral）の設定 ---
-if SHIELD_IIIQBALL-FOOT_L
+if SHIELD_IIIQBall_FOOT_L
 
 config ZMK_KEYBOARD_NAME
-    default "IIIQBALL-FOOT_R"
+    default "IIIQBall_FOOT_R"
 
 config ZMK_SPLIT
     default y

@@ -1,4 +1,4 @@
-#include "IIIQBall-Foot.dtsi"
+#include "IIIQBall_Foot.dtsi"
 
 &xiao_serial { status = "disabled"; };
 

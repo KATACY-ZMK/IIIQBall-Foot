@@ -9,10 +9,10 @@
 / {
     chosen {
         zmk,kscan = &default_kscan;
-        zmk,physical-layout = &IIIQBall-Foot_physical_layout;
+        zmk,physical-layout = &IIIQBall_Foot_physical_layout;
     };
 
-    IIIQBall-Foot_physical_layout: IIIQBall-Foot_physical_layout {
+    IIIQBall_Foot_physical_layout: IIIQBall_Foot_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
         transform = <&default_transform>;

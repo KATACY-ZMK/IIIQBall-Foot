@@ -1,0 +1,11 @@
+config SHIELD_IIIQBall_FOOT_F
+
+def_bool $(shields_list_contains,IIIQBall_Foot_f)
+
+config SHIELD_IIIQBall_FOOT_R
+
+def_bool $(shields_list_contains,IIIQBall_Foot_r)
+
+config SHIELD_IIIQBall_FOOT_L
+
+def_bool $(shields_list_contains,IIIQBall_Foot_l)
