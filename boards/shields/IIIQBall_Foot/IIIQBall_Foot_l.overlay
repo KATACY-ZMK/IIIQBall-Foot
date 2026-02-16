@@ -14,7 +14,7 @@
     row-offset = <3>;
 };
 
-&kscan0 {
+&kscan_0 {
     interrupt-gpios = <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
     gpios = 
