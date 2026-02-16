@@ -42,14 +42,20 @@
 };
 
 / {
-    /* 子機（ペリフェラル）用：入力を反対側の親機に飛ばす設定 */
-    trackball_split: trackball_split {
+    /* 子機用の転送設定：親ノードでアドレス管理が必要 */
+    split_inputs {
         compatible = "zmk,input-split";
-        status = "disabled";
-        device = <&trackball>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            reg = <0>;
+            status = "disabled";
+            device = <&trackball>;
+        };
     };
 
-    /* 親機（セントラル）用：入力信号をマウス挙動として解釈する設定 */
+    /* 親機用の受信設定 */
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
