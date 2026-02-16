@@ -1,11 +1,11 @@
 include:
   - board: xiao_ble
-    shield: IIIQBall-Foot_r
+    shield: IIIQBall-Foot_f
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
-    shield: IIIQBall-Foot_l
+    shield: IIIQBall-Foot_r
   - board: xiao_ble
-    shield: IIIQBall-Foot_f
+    shield: IIIQBall-Foot_l
   - board: xiao_ble
     shield: settings_reset

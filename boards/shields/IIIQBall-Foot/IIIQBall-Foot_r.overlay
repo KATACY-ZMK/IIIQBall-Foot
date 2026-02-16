@@ -1,4 +1,5 @@
 #include "IIIQBall-Foot.dtsi"
+#include "IIIQBall-Foot_trackball.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
@@ -24,13 +25,10 @@
 &right1_encoder { status = "okay"; };
 &right2_encoder { status = "okay"; };
 
-&spi0 { status = "okay"; };
-&trackball {
+&trackball { 
     status = "okay";
-    motion-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 };
 
 &trackball_listener {
     status = "okay";
-    device = <&trackball>;
 };
