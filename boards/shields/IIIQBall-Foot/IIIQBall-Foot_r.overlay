@@ -25,10 +25,9 @@
 &right1_encoder { status = "okay"; };
 &right2_encoder { status = "okay"; };
 
-&trackball { 
-    status = "okay";
-};
+
 
 &trackball_listener {
     status = "okay";
+    device = <&trackball>;
 };
